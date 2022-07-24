@@ -2,5 +2,9 @@
     "appTitle": "Language Skills AI",
     "@appTitle": {
       "description": "Title of the application"
+    },
+    "settingsPage": "Settings",
+    "@settingsPage": {
+        "description": "Navigation label and title for settings page"
     }
 }
