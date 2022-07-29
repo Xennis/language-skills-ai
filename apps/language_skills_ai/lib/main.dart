@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'pages/auth_gate_widget.dart';
 import 'pages/auth_page.dart';
 import 'pages/home_page.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
             if (snapshot.hasData) {
               return const HomePage();
             }
-            return const AuthGate();
+            return const AuthPage();
           }
       ),
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
