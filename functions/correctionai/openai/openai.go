@@ -58,7 +58,7 @@ type CompletionResponse struct {
 }
 
 type Client interface {
-	Completion(ctx context.Context, request Completions) (*CompletionResponse, error)
+	Completions(ctx context.Context, request Completions) (*CompletionResponse, error)
 }
 
 type client struct {
@@ -79,7 +79,7 @@ func NewClient(apiKey string) Client {
 	}
 }
 
-func (c *client) Completion(ctx context.Context, request Completions) (*CompletionResponse, error) {
+func (c *client) Completions(ctx context.Context, request Completions) (*CompletionResponse, error) {
 	// create request
 	raw, err := json.Marshal(request)
 	if err != nil {
@@ -91,7 +91,7 @@ func (c *client) Completion(ctx context.Context, request Completions) (*Completi
 		return nil, fmt.Errorf("http new request: %w", err)
 	}
 	req.Header.Set("Content-type", "application/json")
-	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.apiKey))
+	req.Header.Set("Authorization", "Bearer "+c.apiKey)
 
 	// do request
 	resp, err := c.httpClient.Do(req)

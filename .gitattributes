@@ -1,3 +1,4 @@
+.env.yaml filter=git-crypt diff=git-crypt
 .firebaserc filter=git-crypt diff=git-crypt
 firebase_options.dart filter=git-crypt diff=git-crypt
 google-services.json filter=git-crypt diff=git-crypt
